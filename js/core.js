@@ -148,6 +148,9 @@
                 patt = new RegExp(/[A-E]\d/);
                 if (patt.test(selection)) {
                     getProduct(selection[0], selection[1]);
+                } else {
+                    display("Invalid Code...", true);
+                    user.selection = '';
                 }
                 selection = '';
             }
