@@ -105,8 +105,8 @@
 
     //checks availability of the product and if the customer has enough money for it
     function getProduct(x, y) {
-        user.selection = '';
         if (!products[x][y]) {
+            user.selection = '';
             display('Product not available!!!', true);
             return false;
         }
@@ -120,10 +120,13 @@
                 renderChange(giveChange());
                 user.item = {};
             } else {
+                user.selection = '';
                 display('No money no problems!!', true);
             }
         } else {
+            user.selection = '';
             display('Product not available!!!', true);
+
         }
     }
 
