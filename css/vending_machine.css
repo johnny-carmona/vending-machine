@@ -1,0 +1,164 @@
+body {
+    background-color: white;
+}
+#wrapper {
+    padding-top: 40px;
+}
+
+#vending-machine{
+    background-color: #f9e12a;
+    border: solid 2px #dbc836;
+    -webkit-border-radius: 25px 25px 0 0;
+    -moz-border-radius: 25px 25px 0 0;
+    -ms-border-radius: 25px 25px 0 0;
+    border-radius: 25px 25px 0 0;
+    min-height: 400px;
+    padding-bottom: 20px;
+}
+h2 {
+    background: white;
+    text-align: center;
+    border: solid 1px black;
+    padding: 10px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    overflow: hidden;
+}
+#products {
+    margin-bottom: 10px;
+}
+.product {
+    background: white;
+    border: solid 1px black;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    border-radius: 2px;
+    height: 60px;
+    padding: 5px;
+    box-sizing: border-box;
+    font-size: 12px;
+    font-weight: bold;
+    float: left;
+}
+.code {
+    text-transform: uppercase;
+    display: block;
+    text-align: center;
+    background: #ccc;
+    padding: 2px;
+}
+#display {
+    background: #63aeff;
+    width: 100%;
+    height: 80px;
+    border: solid 1px #45a9d1 ;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    color: #2d567f;
+}
+#display p {
+    padding: 0;
+    margin: 0;
+}
+#buttons-numbers li {
+    float: left;
+}
+#buttons-numbers li .btn{
+    width: 87px;
+}
+#buttons-letters .btn{
+    width: 100%;
+}
+#tray {
+    min-height: 150px;
+    background: white;
+    padding: 10px;
+    overflow: hidden;
+}
+#tray > div {
+    float: left;
+    margin-right: 10px;
+}
+
+#coins{
+    padding: 40px 20px;
+    overflow: hidden;
+}
+#coins > a {
+    float: left;
+    margin-right: 20px;
+}
+[class^="coin-"], [class^="coin-"]:visited, [class^="coin-"]:hover, [class^="coin-"]:focus {
+    color: #888;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%;
+    background: #ccc;
+    border: solid 1px #888;
+    box-sizing: border-box;
+    text-align: center;
+    text-decoration: none;
+
+}
+[class^="coin-"]::after {
+    position: relative;
+    top: 25%;
+}
+[class^="coin-"]:hover {
+    opacity: 0.8;
+}
+.coin-25{
+    width: 50px;
+    height: 50px;
+
+}
+.coin-50{
+    width: 80px;
+    height: 80px;
+
+}
+.coin-100{
+    width: 100px;
+    height: 100px;
+
+}
+.coin-500{
+    width: 110px;
+    height: 110px;
+
+}
+
+.coin-25::after{
+    content: "25";
+}
+.coin-50::after{
+    content: "50";
+    font-size: 27px;
+}
+.coin-100::after{
+    content: "100";
+    font-size: 30px;
+}
+.coin-500::after{
+    content: "500";
+    font-size: 32px;
+}
+@media(max-width: 320px) {
+    #buttons-numbers li .btn{
+        width: auto;
+    }
+}

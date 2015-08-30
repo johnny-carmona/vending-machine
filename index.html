@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Vending Machine</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="vendor/bootstrap-3.3.5-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/vending_machine.css">
+    </head>
+    <body>
+        <div id="wrapper" class="container-fluid">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="vending-machine" class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6 col-md-offset-3">
+                                <h2>Vending Machine</h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                             <div class="col-md-3 col-xs-6">
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div id="display">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div id="buttons-letters" class="col-xs-5 col-md-4">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="btn btn-default">A</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">B</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">C</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">D</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">E</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="buttons-numbers" class="col -xs-7 col-md-8">
+                                        <ul>
+                                            <li>
+                                                <a href="#" class="btn btn-default">0</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">3</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">4</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">5</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">6</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">7</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">8</a>
+                                            </li>
+                                            <li>
+                                                <a href="#" class="btn btn-default">9</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-9 col-xs-6" id="products-container">
+                                <ul id="products">
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <h3>Change tray</h3>
+                                <div id="tray">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <div id="coins">
+                        <a class="coin-25" href="#" data-value="25">
+                        </a>
+                        <a class="coin-50" href="#" data-value="50">
+                        </a>
+                        <a class="coin-100" href="#" data-value="100">
+                        </a>
+                        <a class="coin-500" href="#" data-value="500">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/template" id="product-tmplt">
+    <%_.each(products, function (product, key) {
+            _.each(product, function (item, index) {%>
+                <li class="product col-xs-4 col-md-2">
+                    <span>Price:</span><span><%= item.price %></span>
+                    <span>Qty:</span><span><%= item.quantity %></span>
+                    <span class="code"><%= key %><%= index %></span>
+                </li>
+            <% })
+        }) %>
+    </script>
+    <script type="text/template" id="display-tmplt">
+        <p>Cash: <%= user.cash %></p>
+        <% if(user.selection) { %>
+                <p>Selection: <%=user.selection%></p>
+        <% }
+            if(user.item.price) { %>
+                <p>Price: <%= user.item.price %></p>
+        <% } %>
+    </script>
+    <script type="text/javascript" src="vendor/jquery/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="vendor/underscore/underscore-min.js"></script>
+    <script type="text/javascript" src="js/core.js"></script>
+</html>
