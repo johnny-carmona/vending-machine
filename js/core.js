@@ -29,7 +29,7 @@
         timer = null,
         max_products = 5;
 
-
+    //function that renders to the display
     function display(message, clear) {
         if (_.isObject(message)) {
             output.html(_.template($('#display-tmplt').html())({user: message}));
@@ -44,13 +44,14 @@
             timer = setTimeout(function () { display(user); }, 3000);
         }
     }
+    //renders the products to screen
     function renderProducts() {
         var list = machine.find('#products'),
             tpl = _.template($('#product-tmplt').html());
         list.html(tpl({products: products}));
 
     }
-
+    //renders the change
     function renderChange(coins) {
         var coin,
             el,
@@ -126,7 +127,7 @@
         }
     }
 
-
+    //attches events to the buttons
     function attachEvents() {
 
         $('[class^="coin-"]').on('click', function (e) {
