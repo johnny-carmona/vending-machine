@@ -4,10 +4,10 @@
 
 (function () {
     var cashier = {//money that is in the vending machine
-            500: 5,
-            100: 5,
+            25: 100,
             50: 5,
-            25: 100
+            100: 5,
+            500: 5
         },
         user = {
             cash: 0,
@@ -90,6 +90,7 @@
             keys = Object.keys(cashier).reverse(),
             coins = {},
             counter = 0;
+        console.log(keys);
         for (coin in keys) {
             counter = 0;
             while (user.cash - keys[coin] >= 0 && cashier[keys[coin]] - counter > 0) {
